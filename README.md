@@ -1,6 +1,10 @@
 # Eventex
 
-Sistema de Eventos encomendado pela Morena
+Sistema de Eventos encomendado pela Morena.
+
+[![Build Status](https://travis-ci.org/cpatrickalves/eventex.svg?branch=master)](https://travis-ci.org/cpatrickalves/eventex)
+[![Code Health](https://landscape.io/github/cpatrickalves/eventex/master/landscape.svg?style=flat)](https://landscape.io/github/cpatrickalves/eventex/master)
+
 
 ## Como desenvolver?
 
