@@ -17,3 +17,13 @@ class SubscriptionForm(forms.Form):
     email = forms.EmailField(label="Email")
     phone = forms.CharField(label="Telefone")
 
+    # Este é um método especial do django criado para cada field do formulário
+    # Ele trata a entrada do formulário após a validação
+    # Essa função sempre deve retornar algum valor
+    def clean_name(self):
+        name = self.cleaned_data['name']
+        words = [w.capitalize() for w in name.split()]
+        return ' '.join(words)
+
+        
+
