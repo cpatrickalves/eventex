@@ -27,6 +27,21 @@ class SubscriptionFormTest(TestCase):
         # formulários já validados
         self.assertEqual('Patrick Alves', form.cleaned_data['name'])
 
+    def test_email_is_optional(self):
+        """Email is optional"""
+        form = self.make_validator_form(email='')
+        # dispara caso ocorra algum erro no formulário
+        self.assertFalse(form.errors)
+
+    def test_phone_is_optional(self):
+        form = self.make_validator_form(phone='')
+        self.assertFalse(form.errors)
+
+    def test_must_inform_email_or_phone(self):
+        """Email and phone are optional, but one must be informed"""
+        form = self.make_validator_form(phone='', email='')
+        # Identifica erro no formulário e não em um campo.
+        self.assertListEqual(['__all__'], list(form.errors))
 
     # Compara o código do erro
     def assertFormErrorCode(self, form, field, code):
